@@ -1,13 +1,61 @@
 import { useState } from "react";
 
+
 export default function Home() {
     const [diagrama, setDiagrama] = useState("diagrama-clases.png");
 
     return (
-        <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-5">
-            <h1 className="text-4xl font-bold text-blue-600 mb-6">Diagramas UML - Agro</h1>
+        <div className="container">
+            <h1>Mercado Agro</h1>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+            {/* 📌 TABLA DEL CRONOGRAMA DE ACTIVIDADES */}
+            <div className="cronograma">
+                <h2>Cronograma de Actividades (SCRUM)</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Historia de Usuario</th>
+                            <th>Descripción</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>HU-01</td>
+                            <td>Configurar Next.js y GitHub</td>
+                            <td className="estado-completado">✅ Completado</td>
+                        </tr>
+                        <tr>
+                            <td>HU-02</td>
+                            <td>Subir los diagramas UML</td>
+                            <td className="estado-completado">✅ Completado</td>
+                        </tr>
+                        <tr>
+                            <td>HU-03</td>
+                            <td>Mostrar diagramas en la web</td>
+                            <td className="estado-completado">✅ Completado</td>
+                        </tr>
+                        <tr>
+                            <td>HU-05</td>
+                            <td>Mejorar el diseño visual</td>
+                            <td className="estado-completado">✅ Completado</td>
+                        </tr>
+                        <tr>
+                            <td>HU-07</td>
+                            <td>Hacer la página responsiva</td>
+                            <td className="estado-en-progreso">🔄 En progreso</td>
+                        </tr>
+                        <tr>
+                            <td>HU-12</td>
+                            <td>Entrega final del proyecto</td>
+                            <td className="estado-pendiente">🔲 Pendiente</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            {/* 📌 BOTONES PARA CAMBIAR ENTRE DIAGRAMAS */}
+            <div className="button-container">
                 {[
                     { name: "Diagrama de Clases", file: "diagrama-clases.png" },
                     { name: "Diagrama de Objetos", file: "diagrama-objetos.png" },
@@ -20,21 +68,14 @@ export default function Home() {
                     { name: "Diagrama de Secuencia", file: "diagrama-secuencia.png" },
                     { name: "Diagrama de Comunicación", file: "diagrama-comunicacion.png" },
                 ].map(({ name, file }) => (
-                    <button
-                        key={file}
-                        onClick={() => setDiagrama(file)}
-                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition"
-                    >
+                    <button key={file} onClick={() => setDiagrama(file)}>
                         {name}
                     </button>
                 ))}
             </div>
 
-            <img
-                src={`/${diagrama}`}
-                alt="Diagrama UML"
-                className="w-3/4 max-w-lg rounded-lg shadow-lg border border-gray-300"
-            />
+            {/* 📌 IMAGEN DEL DIAGRAMA SELECCIONADO */}
+            <img src={`/${diagrama}`} alt="Diagrama UML" />
         </div>
     );
 }
