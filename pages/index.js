@@ -57,16 +57,16 @@ export default function Home() {
             {/* 📌 BOTONES PARA CAMBIAR ENTRE DIAGRAMAS */}
             <div className="button-container">
                 {[
-                    { name: "Diagrama de Clases", file: "diagrama-clases.png" },
-                    { name: "Diagrama de Objetos", file: "diagrama-objetos.png" },
-                    { name: "Diagrama de Componentes", file: "diagrama-componentes.png" },
-                    { name: "Diagrama de Despliegue", file: "diagrama-despliegue.png" },
-                    { name: "Diagrama de Paquetes", file: "diagrama-paquetes.png" },
-                    { name: "Diagrama de Casos de Uso", file: "diagrama-casos-uso.png" },
-                    { name: "Diagrama de Actividades", file: "diagrama-actividades.png" },
-                    { name: "Diagrama de Estados", file: "diagrama-estados.png" },
-                    { name: "Diagrama de Secuencia", file: "diagrama-secuencia.png" },
-                    { name: "Diagrama de Comunicación", file: "diagrama-comunicacion.png" },
+                    { name: "Diagrama de Clases", file: "clases.png" },
+                    { name: "Diagrama de Objetos", file: "objetos.png" },
+                    { name: "Diagrama de Componentes", file: "componentes.png" },
+                    { name: "Diagrama de Despliegue", file: "despliegue.png" },
+                    { name: "Diagrama de Paquetes", file: "paquetes.png" },
+                    { name: "Diagrama de Casos de Uso", file: "casos_uso.png" },
+                    { name: "Diagrama de Actividades", file: "actividades.png" },
+                    { name: "Diagrama de Estados", file: "estados.png" },
+                    { name: "Diagrama de Secuencia", file: "secuencia.png" },
+                    { name: "Diagrama de Comunicación", file: "comunicacion.png" },
                 ].map(({ name, file }) => (
                     <button key={file} onClick={() => setDiagrama(file)}>
                         {name}
